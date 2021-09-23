@@ -420,7 +420,7 @@ msgstr "Descrição:"
 #: Template/Admin/Filmes/view.ctp:36
 #: Template/Filmes/view.ctp:36
 msgid "Director"
-msgstr "Direto:"
+msgstr "Diretor:"
 
 #: Template/Admin/Filmes/view.ctp:40
 #: Template/Filmes/view.ctp:40
