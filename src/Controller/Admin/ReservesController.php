@@ -48,9 +48,10 @@ class ReservesController extends AppController
                                               
                 return $this->redirect(['action' => 'index']);
             }
+        }
 
             $this->Flash->error(__('The reserve could not be saved. Please, try again.'));
-        }
+        
         $filmes = $this->Reserves->Filmes->find('list',array('fields' => array('id','title')));
         $clients = $this->Reserves->Clients->find('list',array('fields' => array('id','name')));
         $this->set(compact('reserve','filmes','clients'));
