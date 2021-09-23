@@ -38,19 +38,10 @@ class FilmesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
-        $this->hasMany('Reserves', [
-            'ForeignKey' => 'id'
-        ]);
 
-        
+        $this->hasMany('Reserves');
     }
 
-    /**
-     * Default validation rules.
-     *
-     * @param \Cake\Validation\Validator $validator Validator instance.
-     * @return \Cake\Validation\Validator
-     */
     public function validationDefault(Validator $validator)
     {
         $validator
@@ -105,4 +96,5 @@ class FilmesTable extends Table
 
         return $validator;
     }
+   
 }

@@ -37,7 +37,9 @@ class ClientsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->hasMany('Reserves');
     }
+
 
     /**
      * Default validation rules.

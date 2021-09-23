@@ -8,14 +8,14 @@ use Cake\ORM\TableRegistry;
 
 class ReservesController extends AppController
 {
-
+   
        
     public function index()
     {
         $reserves = $this->paginate($this->Reserves);
-
         $this->set(compact('reserves'));
-    }
+
+     }
 
     public function view($id = null)
     {
@@ -24,6 +24,7 @@ class ReservesController extends AppController
         ]);
 
         $this->set('reserve', $reserve);
+
     }
 
     public function add()
@@ -40,15 +41,17 @@ class ReservesController extends AppController
                 $filmeTable = TableRegistry::getTableLocator()->get('Filmes');
                 $filme = $filmeTable->get($this->request->data('id_movies')); 
                 $filme->quantity = ($filme['quantity']-1);
+
                 $filmeTable->save($filme);
-                
-                               
+                                              
                 return $this->redirect(['action' => 'index']);
             }
 
             $this->Flash->error(__('The reserve could not be saved. Please, try again.'));
         }
-        $this->set(compact('reserve'));
+        $filmes = $this->Reserves->Filmes->find('list',array('fields' => array('id','title')));
+        $clients = $this->Reserves->Clients->find('list',array('fields' => array('id','name')));
+        $this->set(compact('reserve','filmes','clients'));
     }
   
     public function edit($id = null)
@@ -65,7 +68,9 @@ class ReservesController extends AppController
             }
             $this->Flash->error(__('The reserve could not be saved. Please, try again.'));
         }
-        $this->set(compact('reserve'));
+        $filmes = $this->Reserves->Filmes->find('list',array('fields' => array('id','title')));
+        $clients = $this->Reserves->Clients->find('list',array('fields' => array('id','name')));
+        $this->set(compact('reserve','filmes','clients'));
     }
 
      public function delete($id = null)

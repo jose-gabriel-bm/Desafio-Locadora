@@ -15,8 +15,8 @@
     <fieldset>
         <legend><?= __('Add Reserve') ?></legend>
         <?php
-            echo $this->Form->control('id_movies');
-            echo $this->Form->control('id_clients');
+            echo $this->Form->control('id_movies',array('options' => $filmes, 'empty'=>'Selecione um filme'));
+            echo $this->Form->control('id_clients',array('options' => $clients, 'empty'=>'Selecione um cliente'));
             echo $this->Form->control('data_locacao');
             echo $this->Form->control('data_devolucao');
             echo $this->Form->control('reserves_value');

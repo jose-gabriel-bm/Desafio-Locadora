@@ -1,10 +1,12 @@
 <?php
 namespace App\Model\Table;
 
+use Cake\ORM\Association\BelongsTo;
 use Cake\ORM\Query;
 use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
+use WyriHaximus\TwigView\Lib\Twig\Extension\Arrays;
 
 /**
  * Reserves Model
@@ -37,9 +39,15 @@ class ReservesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
-        $this->belongsTo('Filmes',[
-            'foreingKey'=> 'id_movies'
-        ]);
+            // $this->belongsTo('Filmes', [
+            //     'foreingKey'=> 'id_movies',
+            //     'joinType' => 'LEFT',
+            //     'ReservesController' => 'Usuarios',
+            //     'propertyName' => 'filme',
+            //     'dependent' => true
+            // ]);
+        $this->hasMany('Filmes');
+        $this->hasMany('Clients');
     }
 
     public function validationDefault(Validator $validator)
@@ -81,4 +89,6 @@ class ReservesTable extends Table
 
         return $validator;
     }
+         
+        
 }
