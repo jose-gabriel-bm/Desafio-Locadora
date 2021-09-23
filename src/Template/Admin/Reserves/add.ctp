@@ -20,7 +20,7 @@
             echo $this->Form->control('data_locacao');
             echo $this->Form->control('data_devolucao');
             echo $this->Form->control('reserves_value');
-            echo $this->Form->control('devolvido');
+            echo $this->Form->control('devolvido'); 
 
             
         ?>

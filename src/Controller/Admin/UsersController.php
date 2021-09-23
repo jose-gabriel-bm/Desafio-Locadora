@@ -72,7 +72,9 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $this->set(compact('user'));
+        
+        $funcao = $this->Users->Roles->find('list',array('fields' => array('id','role')));
+        $this->set(compact('user','funcao'));
     }
 
     /**

@@ -37,6 +37,7 @@ class RolesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+        $this->hasOne('Users');
     }
 
     /**

@@ -38,6 +38,7 @@ class ClientsTable extends Table
 
         $this->addBehavior('Timestamp');
         $this->hasMany('Reserves');
+        $this->hasMany('Roles');
     }
 
 

@@ -19,7 +19,7 @@
             echo $this->Form->control('username');
             echo $this->Form->control('email');
             echo $this->Form->control('password');
-            echo $this->Form->control('id_roles');
+            echo $this->Form->control('id_roles',array('options' => $funcao, 'empty'=>'Selecione uma função'));
         ?>
     </fieldset>
     <?= $this->Form->button(__('Cadastrar')) ?>

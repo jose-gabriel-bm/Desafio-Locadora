@@ -5,7 +5,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2021-09-17 17:48+0000\n"
+"POT-Creation-Date: 2021-09-23 17:34+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -14,64 +14,127 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: Controller/ClientsController.php:54
-#: Controller/ClientsController.php:78
+#: Controller/FilmesController.php:54
+#: Controller/FilmesController.php:78
+#: Controller/Admin/FilmesController.php:54
+#: Controller/Admin/FilmesController.php:78
+msgid "The filme has been saved."
+msgstr ""
+
+#: Controller/FilmesController.php:58
+#: Controller/FilmesController.php:82
+#: Controller/Admin/FilmesController.php:58
+#: Controller/Admin/FilmesController.php:82
+msgid "The filme could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/FilmesController.php:99
+#: Controller/Admin/FilmesController.php:99
+msgid "The filme has been deleted."
+msgstr ""
+
+#: Controller/FilmesController.php:101
+#: Controller/Admin/FilmesController.php:101
+msgid "The filme could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/ReservesController.php:54
+#: Controller/ReservesController.php:78
+#: Controller/Admin/ReservesController.php:38
+#: Controller/Admin/ReservesController.php:65
+msgid "The reserve has been saved."
+msgstr ""
+
+#: Controller/ReservesController.php:58
+#: Controller/ReservesController.php:82
+#: Controller/Admin/ReservesController.php:50
+#: Controller/Admin/ReservesController.php:69
+msgid "The reserve could not be saved. Please, try again."
+msgstr ""
+
+#: Controller/ReservesController.php:99
+#: Controller/Admin/ReservesController.php:81
+msgid "The reserve has been deleted."
+msgstr ""
+
+#: Controller/ReservesController.php:101
+#: Controller/Admin/ReservesController.php:83
+msgid "The reserve could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/ClientsController.php:54
+#: Controller/Admin/ClientsController.php:78
 msgid "The client has been saved."
 msgstr ""
 
-#: Controller/ClientsController.php:58
-#: Controller/ClientsController.php:82
+#: Controller/Admin/ClientsController.php:58
+#: Controller/Admin/ClientsController.php:82
 msgid "The client could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/ClientsController.php:99
+#: Controller/Admin/ClientsController.php:99
 msgid "The client has been deleted."
 msgstr ""
 
-#: Controller/ClientsController.php:101
+#: Controller/Admin/ClientsController.php:101
 msgid "The client could not be deleted. Please, try again."
+msgstr ""
+
+#: Controller/Admin/RolesController.php:50
+#: Controller/Admin/RolesController.php:74
+msgid "The role has been saved."
 msgstr ""
 
 #: Controller/Admin/RolesController.php:54
 #: Controller/Admin/RolesController.php:78
-msgid "The role has been saved."
-msgstr ""
-
-#: Controller/Admin/RolesController.php:58
-#: Controller/Admin/RolesController.php:82
 msgid "The role could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/RolesController.php:99
+#: Controller/Admin/RolesController.php:95
 msgid "The role has been deleted."
 msgstr ""
 
-#: Controller/Admin/RolesController.php:101
+#: Controller/Admin/RolesController.php:97
 msgid "The role could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/UsersController.php:61
-#: Controller/Admin/UsersController.php:85
+#: Controller/Admin/UsersController.php:69
+#: Controller/Admin/UsersController.php:93
 msgid "The user has been saved."
 msgstr ""
 
-#: Controller/Admin/UsersController.php:65
-#: Controller/Admin/UsersController.php:89
+#: Controller/Admin/UsersController.php:73
+#: Controller/Admin/UsersController.php:97
 msgid "The user could not be saved. Please, try again."
 msgstr ""
 
-#: Controller/Admin/UsersController.php:106
+#: Controller/Admin/UsersController.php:114
 msgid "The user has been deleted."
 msgstr ""
 
-#: Controller/Admin/UsersController.php:108
+#: Controller/Admin/UsersController.php:116
 msgid "The user could not be deleted. Please, try again."
 msgstr ""
 
-#: Controller/Admin/UsersController.php:121
+#: Controller/Admin/UsersController.php:129
 msgid "Invalid username or password,try again"
 msgstr ""
 
+#: Template/Admin/Clients/add.ctp:9
+#: Template/Admin/Clients/edit.ctp:9
+#: Template/Admin/Clients/index.ctp:9
+#: Template/Admin/Clients/index.ctp:25
+#: Template/Admin/Clients/view.ctp:9
+#: Template/Admin/Filmes/add.ctp:9
+#: Template/Admin/Filmes/edit.ctp:9
+#: Template/Admin/Filmes/index.ctp:9
+#: Template/Admin/Filmes/index.ctp:29
+#: Template/Admin/Filmes/view.ctp:9
+#: Template/Admin/Reserves/add.ctp:9
+#: Template/Admin/Reserves/edit.ctp:9
+#: Template/Admin/Reserves/index.ctp:9
+#: Template/Admin/Reserves/index.ctp:27
+#: Template/Admin/Reserves/view.ctp:9
 #: Template/Admin/Roles/add.ctp:9
 #: Template/Admin/Roles/edit.ctp:9
 #: Template/Admin/Roles/index.ctp:9
@@ -79,15 +142,382 @@ msgstr ""
 #: Template/Admin/Roles/view.ctp:9
 #: Template/Admin/Users/add.ctp:9
 #: Template/Admin/Users/edit.ctp:9
-#: Template/Admin/Users/index.ctp:9
-#: Template/Admin/Users/index.ctp:26
+#: Template/Admin/Users/index.ctp:24
 #: Template/Admin/Users/view.ctp:9
-#: Template/Clients/add.ctp:9
-#: Template/Clients/edit.ctp:9
-#: Template/Clients/index.ctp:9
-#: Template/Clients/index.ctp:25
-#: Template/Clients/view.ctp:9
+#: Template/Filmes/add.ctp:9
+#: Template/Filmes/edit.ctp:9
+#: Template/Filmes/index.ctp:9
+#: Template/Filmes/index.ctp:29
+#: Template/Filmes/view.ctp:9
+#: Template/Reserves/add.ctp:9
+#: Template/Reserves/edit.ctp:9
+#: Template/Reserves/index.ctp:9
+#: Template/Reserves/index.ctp:27
+#: Template/Reserves/view.ctp:9
 msgid "Actions"
+msgstr ""
+
+#: Template/Admin/Clients/add.ctp:10
+#: Template/Admin/Clients/edit.ctp:16
+#: Template/Admin/Clients/view.ctp:12
+msgid "List Clients"
+msgstr ""
+
+#: Template/Admin/Clients/add.ctp:16
+msgid "Add Client"
+msgstr ""
+
+#: Template/Admin/Clients/add.ctp:24
+#: Template/Admin/Clients/edit.ctp:30
+#: Template/Admin/Filmes/add.ctp:28
+#: Template/Admin/Filmes/edit.ctp:33
+#: Template/Admin/Reserves/add.ctp:28
+#: Template/Admin/Reserves/edit.ctp:32
+#: Template/Admin/Roles/edit.ctp:27
+#: Template/Admin/Users/edit.ctp:31
+#: Template/Filmes/add.ctp:28
+#: Template/Filmes/edit.ctp:34
+#: Template/Reserves/add.ctp:26
+#: Template/Reserves/edit.ctp:32
+msgid "Submit"
+msgstr ""
+
+#: Template/Admin/Clients/edit.ctp:11
+#: Template/Admin/Clients/index.ctp:41
+#: Template/Admin/Filmes/edit.ctp:11
+#: Template/Admin/Filmes/index.ctp:49
+#: Template/Admin/Reserves/edit.ctp:11
+#: Template/Admin/Reserves/index.ctp:45
+#: Template/Admin/Roles/edit.ctp:11
+#: Template/Admin/Roles/index.ctp:35
+#: Template/Admin/Users/edit.ctp:11
+#: Template/Admin/Users/index.ctp:41
+#: Template/Filmes/edit.ctp:11
+#: Template/Filmes/index.ctp:49
+#: Template/Reserves/edit.ctp:11
+#: Template/Reserves/index.ctp:45
+msgid "Delete"
+msgstr ""
+
+#: Template/Admin/Clients/edit.ctp:13
+#: Template/Admin/Clients/index.ctp:41
+#: Template/Admin/Clients/view.ctp:11
+#: Template/Admin/Filmes/edit.ctp:13
+#: Template/Admin/Filmes/index.ctp:49
+#: Template/Admin/Filmes/view.ctp:11
+#: Template/Admin/Reserves/edit.ctp:13
+#: Template/Admin/Reserves/index.ctp:45
+#: Template/Admin/Reserves/view.ctp:11
+#: Template/Admin/Roles/edit.ctp:13
+#: Template/Admin/Roles/index.ctp:35
+#: Template/Admin/Roles/view.ctp:11
+#: Template/Admin/Users/edit.ctp:13
+#: Template/Admin/Users/index.ctp:41
+#: Template/Admin/Users/view.ctp:11
+#: Template/Filmes/edit.ctp:13
+#: Template/Filmes/index.ctp:49
+#: Template/Filmes/view.ctp:11
+#: Template/Reserves/edit.ctp:13
+#: Template/Reserves/index.ctp:45
+#: Template/Reserves/view.ctp:11
+msgid "Are you sure you want to delete # {0}?"
+msgstr ""
+
+#: Template/Admin/Clients/edit.ctp:22
+#: Template/Admin/Clients/view.ctp:10
+msgid "Edit Client"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:10
+#: Template/Admin/Clients/view.ctp:13
+msgid "New Client"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:14
+msgid "Clients"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:39
+#: Template/Admin/Filmes/index.ctp:47
+#: Template/Admin/Reserves/index.ctp:43
+#: Template/Admin/Roles/index.ctp:33
+#: Template/Admin/Users/index.ctp:39
+#: Template/Filmes/index.ctp:47
+#: Template/Reserves/index.ctp:43
+msgid "View"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:40
+#: Template/Admin/Filmes/index.ctp:48
+#: Template/Admin/Reserves/index.ctp:44
+#: Template/Admin/Roles/index.ctp:34
+#: Template/Admin/Users/index.ctp:40
+#: Template/Filmes/index.ctp:48
+#: Template/Reserves/index.ctp:44
+msgid "Edit"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:49
+#: Template/Admin/Filmes/index.ctp:57
+#: Template/Admin/Reserves/index.ctp:54
+#: Template/Admin/Roles/index.ctp:43
+#: Template/Admin/Users/index.ctp:49
+#: Template/Filmes/index.ctp:57
+#: Template/Reserves/index.ctp:53
+msgid "first"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:50
+#: Template/Admin/Filmes/index.ctp:58
+#: Template/Admin/Reserves/index.ctp:55
+#: Template/Admin/Roles/index.ctp:44
+#: Template/Admin/Users/index.ctp:50
+#: Template/Filmes/index.ctp:58
+#: Template/Reserves/index.ctp:54
+msgid "previous"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:52
+#: Template/Admin/Filmes/index.ctp:60
+#: Template/Admin/Reserves/index.ctp:57
+#: Template/Admin/Roles/index.ctp:46
+#: Template/Admin/Users/index.ctp:52
+#: Template/Filmes/index.ctp:60
+#: Template/Reserves/index.ctp:56
+msgid "next"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:53
+#: Template/Admin/Filmes/index.ctp:61
+#: Template/Admin/Reserves/index.ctp:58
+#: Template/Admin/Roles/index.ctp:47
+#: Template/Admin/Users/index.ctp:53
+#: Template/Filmes/index.ctp:61
+#: Template/Reserves/index.ctp:57
+msgid "last"
+msgstr ""
+
+#: Template/Admin/Clients/index.ctp:55
+#: Template/Admin/Filmes/index.ctp:63
+#: Template/Admin/Reserves/index.ctp:60
+#: Template/Admin/Roles/index.ctp:49
+#: Template/Admin/Users/index.ctp:55
+#: Template/Filmes/index.ctp:63
+#: Template/Reserves/index.ctp:59
+msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:11
+msgid "Delete Client"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:20
+#: Template/Admin/Users/view.ctp:20
+msgid "Name"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:24
+msgid "Cpf"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:28
+#: Template/Admin/Users/view.ctp:28
+msgid "Email"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:32
+msgid "Contato"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:36
+#: Template/Admin/Filmes/view.ctp:44
+#: Template/Admin/Reserves/view.ctp:31
+#: Template/Admin/Roles/view.ctp:24
+#: Template/Admin/Users/view.ctp:40
+#: Template/Filmes/view.ctp:44
+#: Template/Reserves/view.ctp:24
+msgid "Id"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:40
+#: Template/Admin/Filmes/view.ctp:52
+#: Template/Admin/Reserves/view.ctp:47
+#: Template/Admin/Roles/view.ctp:28
+#: Template/Admin/Users/view.ctp:45
+#: Template/Filmes/view.ctp:56
+#: Template/Reserves/view.ctp:48
+msgid "Created"
+msgstr ""
+
+#: Template/Admin/Clients/view.ctp:44
+#: Template/Admin/Filmes/view.ctp:56
+#: Template/Admin/Reserves/view.ctp:51
+#: Template/Admin/Roles/view.ctp:32
+#: Template/Admin/Users/view.ctp:49
+#: Template/Filmes/view.ctp:60
+#: Template/Reserves/view.ctp:52
+msgid "Modified"
+msgstr ""
+
+#: Template/Admin/Filmes/add.ctp:10
+#: Template/Admin/Filmes/edit.ctp:16
+#: Template/Admin/Filmes/view.ctp:12
+#: Template/Filmes/add.ctp:10
+#: Template/Filmes/edit.ctp:16
+#: Template/Filmes/view.ctp:12
+msgid "List Filmes"
+msgstr ""
+
+#: Template/Admin/Filmes/add.ctp:16
+#: Template/Filmes/add.ctp:16
+msgid "Add Filme"
+msgstr ""
+
+#: Template/Admin/Filmes/edit.ctp:22
+#: Template/Admin/Filmes/view.ctp:10
+#: Template/Filmes/edit.ctp:22
+#: Template/Filmes/view.ctp:10
+msgid "Edit Filme"
+msgstr ""
+
+#: Template/Admin/Filmes/index.ctp:10
+#: Template/Admin/Filmes/view.ctp:13
+#: Template/Filmes/index.ctp:10
+#: Template/Filmes/view.ctp:13
+msgid "New Filme"
+msgstr ""
+
+#: Template/Admin/Filmes/index.ctp:14
+#: Template/Filmes/index.ctp:14
+msgid "Filmes"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:11
+#: Template/Filmes/view.ctp:11
+msgid "Delete Filme"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:20
+#: Template/Filmes/view.ctp:20
+msgid "Title"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:24
+#: Template/Filmes/view.ctp:24
+msgid "Ano"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:28
+#: Template/Filmes/view.ctp:28
+msgid "Genre"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:32
+#: Template/Filmes/view.ctp:32
+msgid "Description"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:36
+#: Template/Filmes/view.ctp:36
+msgid "Director"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:40
+#: Template/Filmes/view.ctp:40
+msgid "Language"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:48
+#: Template/Filmes/view.ctp:48
+msgid "Movie Value"
+msgstr ""
+
+#: Template/Admin/Filmes/view.ctp:60
+#: Template/Filmes/view.ctp:52
+msgid "Quantity"
+msgstr ""
+
+#: Template/Admin/Reserves/add.ctp:10
+#: Template/Admin/Reserves/edit.ctp:16
+#: Template/Admin/Reserves/view.ctp:15
+#: Template/Reserves/add.ctp:10
+#: Template/Reserves/edit.ctp:16
+#: Template/Reserves/view.ctp:12
+msgid "List Reserves"
+msgstr ""
+
+#: Template/Admin/Reserves/add.ctp:16
+#: Template/Reserves/add.ctp:16
+msgid "Add Reserve"
+msgstr ""
+
+#: Template/Admin/Reserves/edit.ctp:22
+#: Template/Admin/Reserves/view.ctp:10
+#: Template/Reserves/edit.ctp:22
+#: Template/Reserves/view.ctp:10
+msgid "Edit Reserve"
+msgstr ""
+
+#: Template/Admin/Reserves/index.ctp:10
+#: Template/Admin/Reserves/view.ctp:16
+#: Template/Reserves/index.ctp:10
+#: Template/Reserves/view.ctp:13
+msgid "New Reserve"
+msgstr ""
+
+#: Template/Admin/Reserves/index.ctp:14
+#: Template/Reserves/index.ctp:14
+msgid "Reserves"
+msgstr ""
+
+#: Template/Admin/Reserves/index.ctp:46
+msgid "Devolver"
+msgstr ""
+
+#: Template/Admin/Reserves/index.ctp:46
+msgid "Deseja realmente devolver o Filme?"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:11
+#: Template/Reserves/view.ctp:11
+msgid "Delete Reserve"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:13
+msgid "Devolver Filme"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:13
+msgid "Deseja realmente devolver o Filme? # {0}?"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:23
+#: Template/Reserves/view.ctp:40
+msgid "Data Locacao"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:27
+#: Template/Reserves/view.ctp:44
+msgid "Data Devolucao"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:35
+#: Template/Reserves/view.ctp:28
+msgid "Id Movies"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:39
+#: Template/Reserves/view.ctp:32
+msgid "Id Clients"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:43
+#: Template/Reserves/view.ctp:36
+msgid "Reserves Value"
+msgstr ""
+
+#: Template/Admin/Reserves/view.ctp:55
+msgid "devolvido"
 msgstr ""
 
 #: Template/Admin/Roles/add.ctp:10
@@ -101,34 +531,8 @@ msgid "Add Role"
 msgstr ""
 
 #: Template/Admin/Roles/add.ctp:21
-#: Template/Admin/Roles/edit.ctp:27
 #: Template/Admin/Users/add.ctp:25
-#: Template/Admin/Users/edit.ctp:31
-#: Template/Admin/Users/login.ctp:21
-#: Template/Clients/add.ctp:24
-#: Template/Clients/edit.ctp:30
-msgid "Submit"
-msgstr ""
-
-#: Template/Admin/Roles/edit.ctp:11
-#: Template/Admin/Roles/index.ctp:35
-#: Template/Admin/Users/edit.ctp:11
-#: Template/Admin/Users/index.ctp:43
-#: Template/Clients/edit.ctp:11
-#: Template/Clients/index.ctp:41
-msgid "Delete"
-msgstr ""
-
-#: Template/Admin/Roles/edit.ctp:13
-#: Template/Admin/Roles/index.ctp:35
-#: Template/Admin/Roles/view.ctp:11
-#: Template/Admin/Users/edit.ctp:13
-#: Template/Admin/Users/index.ctp:43
-#: Template/Admin/Users/view.ctp:11
-#: Template/Clients/edit.ctp:13
-#: Template/Clients/index.ctp:41
-#: Template/Clients/view.ctp:11
-msgid "Are you sure you want to delete # {0}?"
+msgid "Cadastrar"
 msgstr ""
 
 #: Template/Admin/Roles/edit.ctp:22
@@ -145,72 +549,12 @@ msgstr ""
 msgid "Roles"
 msgstr ""
 
-#: Template/Admin/Roles/index.ctp:33
-#: Template/Admin/Users/index.ctp:41
-#: Template/Clients/index.ctp:39
-msgid "View"
-msgstr ""
-
-#: Template/Admin/Roles/index.ctp:34
-#: Template/Admin/Users/index.ctp:42
-#: Template/Clients/index.ctp:40
-msgid "Edit"
-msgstr ""
-
-#: Template/Admin/Roles/index.ctp:43
-#: Template/Admin/Users/index.ctp:51
-#: Template/Clients/index.ctp:49
-msgid "first"
-msgstr ""
-
-#: Template/Admin/Roles/index.ctp:44
-#: Template/Admin/Users/index.ctp:52
-#: Template/Clients/index.ctp:50
-msgid "previous"
-msgstr ""
-
-#: Template/Admin/Roles/index.ctp:46
-#: Template/Admin/Users/index.ctp:54
-#: Template/Clients/index.ctp:52
-msgid "next"
-msgstr ""
-
-#: Template/Admin/Roles/index.ctp:47
-#: Template/Admin/Users/index.ctp:55
-#: Template/Clients/index.ctp:53
-msgid "last"
-msgstr ""
-
-#: Template/Admin/Roles/index.ctp:49
-#: Template/Admin/Users/index.ctp:57
-#: Template/Clients/index.ctp:55
-msgid "Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total"
-msgstr ""
-
 #: Template/Admin/Roles/view.ctp:11
 msgid "Delete Role"
 msgstr ""
 
 #: Template/Admin/Roles/view.ctp:20
 msgid "Role"
-msgstr ""
-
-#: Template/Admin/Roles/view.ctp:24
-#: Template/Admin/Users/view.ctp:40
-#: Template/Clients/view.ctp:36
-msgid "Id"
-msgstr ""
-
-#: Template/Admin/Roles/view.ctp:28
-#: Template/Admin/Users/view.ctp:45
-#: Template/Clients/view.ctp:40
-msgid "Created"
-msgstr ""
-
-#: Template/Admin/Roles/view.ctp:32
-#: Template/Admin/Users/view.ctp:49
-#: Template/Clients/view.ctp:44
-msgid "Modified"
 msgstr ""
 
 #: Template/Admin/Users/add.ctp:10
@@ -228,39 +572,37 @@ msgstr ""
 msgid "Edit User"
 msgstr ""
 
-#: Template/Admin/Users/index.ctp:10
+#: Template/Admin/Users/index.ctp:7
+msgid "Usuarios"
+msgstr ""
+
+#: Template/Admin/Users/index.ctp:8
 #: Template/Admin/Users/view.ctp:13
 msgid "New User"
 msgstr ""
 
-#: Template/Admin/Users/index.ctp:14
+#: Template/Admin/Users/index.ctp:12
 msgid "Users"
 msgstr ""
 
-#: Template/Admin/Users/login.ctp:12
+#: Template/Admin/Users/login.ctp:11
 msgid "Login"
 msgstr ""
 
-#: Template/Admin/Users/login.ctp:19
+#: Template/Admin/Users/login.ctp:18
 msgid "Novo Usuario"
+msgstr ""
+
+#: Template/Admin/Users/login.ctp:20
+msgid "Logar"
 msgstr ""
 
 #: Template/Admin/Users/view.ctp:11
 msgid "Delete User"
 msgstr ""
 
-#: Template/Admin/Users/view.ctp:20
-#: Template/Clients/view.ctp:20
-msgid "Name"
-msgstr ""
-
 #: Template/Admin/Users/view.ctp:24
 msgid "Username"
-msgstr ""
-
-#: Template/Admin/Users/view.ctp:28
-#: Template/Clients/view.ctp:28
-msgid "Email"
 msgstr ""
 
 #: Template/Admin/Users/view.ctp:32
@@ -269,42 +611,6 @@ msgstr ""
 
 #: Template/Admin/Users/view.ctp:36
 msgid "Id Roles"
-msgstr ""
-
-#: Template/Clients/add.ctp:10
-#: Template/Clients/edit.ctp:16
-#: Template/Clients/view.ctp:12
-msgid "List Clients"
-msgstr ""
-
-#: Template/Clients/add.ctp:16
-msgid "Add Client"
-msgstr ""
-
-#: Template/Clients/edit.ctp:22
-#: Template/Clients/view.ctp:10
-msgid "Edit Client"
-msgstr ""
-
-#: Template/Clients/index.ctp:10
-#: Template/Clients/view.ctp:13
-msgid "New Client"
-msgstr ""
-
-#: Template/Clients/index.ctp:14
-msgid "Clients"
-msgstr ""
-
-#: Template/Clients/view.ctp:11
-msgid "Delete Client"
-msgstr ""
-
-#: Template/Clients/view.ctp:24
-msgid "Cpf"
-msgstr ""
-
-#: Template/Clients/view.ctp:32
-msgid "Contato"
 msgstr ""
 
 #: Template/Layout/default.ctp:47
@@ -318,4 +624,8 @@ msgstr ""
 #: Template/Layout/error.ctp:44
 msgid "Back"
 msgstr ""
+
+#: Template/Reserves/view.ctp:20
+msgid "Devolvido"
+msgstr "Devolvido?"
 
