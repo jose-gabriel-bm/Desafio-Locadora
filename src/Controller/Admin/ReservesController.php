@@ -8,8 +8,7 @@ use Cake\ORM\TableRegistry;
 
 class ReservesController extends AppController
 {
-   
-       
+          
     public function index()
     {
         $reserves = $this->paginate($this->Reserves);
@@ -34,8 +33,6 @@ class ReservesController extends AppController
         if ($this->request->is('post')) {
             $reserve = $this->Reserves->patchEntity($reserve, $this->request->getData());
             
-            
-
             if ($this->Reserves->save($reserve)) {
                 $this->Flash->success(__('The reserve has been saved.'));
                 
@@ -48,9 +45,10 @@ class ReservesController extends AppController
                                               
                 return $this->redirect(['action' => 'index']);
             }
+             $this->Flash->error(__('The reserve could not be saved. Please, try again.'));
         }
 
-            $this->Flash->error(__('The reserve could not be saved. Please, try again.'));
+           
         
         $filmes = $this->Reserves->Filmes->find('list',array('fields' => array('id','title')));
         $clients = $this->Reserves->Clients->find('list',array('fields' => array('id','name')));
@@ -91,14 +89,35 @@ class ReservesController extends AppController
 
     public function Devolver($id_movies)
     {
-       
+        // $reserveTable = TableRegistry::getTableLocator()->get('Reserves');
+        // $status = $reserveTable->get($id_movies); 
+        // $status->devolvido = ('Sim');
+        // $reserveTable->save($status);   
+        
         $filmeTable = TableRegistry::getTableLocator()->get('Filmes');
         $filme = $filmeTable->get($id_movies); 
         $filme->quantity = ($filme['quantity']+1);
-        $filmeTable->save($filme);
-        
-        // debug($filme['quantity'] +1);
-        return $this->redirect(['action' => 'index']);
 
+        // $filmeTable->save($filme);
+        // debug($filme['quantity'] +1);
+
+        if ($filmeTable->save($filme)) {
+            $this->Flash->success(__('Devolvido com sucesso'));
+        } else {
+            $this->Flash->error(__('Nao pode ser devolvido'));
+        }    
+        return $this->redirect(['action' => 'index']);
     }
+    public function AlterStatus ($devolvido){
+        
+        $reserveTable = TableRegistry::getTableLocator()->get('Reserves');
+        
+        $status = $reserveTable->get($devolvido); 
+        $status->devolvido = ('Sim');
+        $reserveTable->save($status); 
+       
+        return $this->redirect(['action' => 'index']);
+    }
+
+
 }

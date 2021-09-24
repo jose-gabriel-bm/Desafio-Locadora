@@ -28,6 +28,7 @@
             echo $this->Form->control('director');
             echo $this->Form->control('language');
             echo $this->Form->control('movie_value');
+            echo $this->Form->control('quantity');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

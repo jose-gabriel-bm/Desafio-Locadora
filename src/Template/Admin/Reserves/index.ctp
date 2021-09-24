@@ -44,6 +44,7 @@
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $reserve->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $reserve->id], ['confirm' => __('Are you sure you want to delete # {0}?', $reserve->id)]) ?>
                     <?= $this->Form->postLink(__('Devolver'), ['action' => 'devolver', $reserve->id_movies], ['confirm' => __('Deseja realmente devolver o Filme?', $reserve->id)]) ?>
+                    <?= $this->Form->postLink(__('AlterStatus'), ['action' => 'alterstatus', $reserve->id], ['confirm' => __('Deseja realmente alterar status da reserva?', $reserve->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
