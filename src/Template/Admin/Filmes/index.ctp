@@ -1,37 +1,36 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Filme[]|\Cake\Collection\CollectionInterface $filmes
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Filme'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="filmes index large-9 medium-8 columns content">
-    <h3><?= __('Filmes') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<div class="d-flex">
+    <div class="mr-auto p-2">
+              <h3 class="display-4 titulo">Lista de Filmes</h3>
+            </div>
+              <div class="p-2">
+                  <?= $this->Html->link(__('Cadastrar Filme'),['controller'=>'filmes','action' => 'add'],
+                  ['class' => 'btn btn-outline-success btn-sm']); ?>               
+              </div>
+
+            </a>
+
+          </div>
+    <div class="table-responsive">
+        <table class="table table align-middle table-hover table-striped table-bordered">
         <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('title') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('ano') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('genre') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('description') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('director') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('language') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('movie_value') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('quantity') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
+              <tr>
+                <th class="align-top">ID</th>
+                <th class="align-top">Title</th>
+                <th class="align-top">Ano</th>
+                <th class="align-top">Genero</th>
+                <th class="align-top">Descrição</th>
+                <th class="align-top">director</th>
+                <th class="align-top">Linguagem</th>
+                <th class="align-top">Valor Filme</th>
+                <th class="align-top">Quantidade</th>
+                <th class="align-top d-nome d-lg-table-cell">Criado em:</th>
+                <th class="align-topd-nome d-lg-table-cell">Modificado em:</th>
+                <th class="align-top text-center">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
             <?php foreach ($filmes as $filme): ?>
-            <tr>
+              <tr>
                 <td><?= $this->Number->format($filme->id) ?></td>
                 <td><?= h($filme->title) ?></td>
                 <td><?= h($filme->ano) ?></td>
@@ -49,17 +48,9 @@
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $filme->id], ['confirm' => __('Are you sure you want to delete # {0}?', $filme->id)]) ?>
                 </td>
             </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+      <?= $this->element('pagination');?>
     </div>
-</div>
+

@@ -1,33 +1,32 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Client[]|\Cake\Collection\CollectionInterface $clients
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Client'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="clients index large-9 medium-8 columns content">
-    <h3><?= __('Clients') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<div class="d-flex">
+    <div class="mr-auto p-2">
+              <h3 class="display-4 titulo">Lista de Clientes</h3>
+            </div>
+              <div class="p-2">
+                  <?= $this->Html->link(__('Cadastrar Cliente'),['controller'=>'clients','action' => 'add'],
+                  ['class' => 'btn btn-outline-success btn-sm']); ?>               
+              </div>
+
+            </a>
+
+          </div>
+    <div class="table-responsive">
+        <table class="table table align-middle table-hover table-striped table-bordered">
         <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('cpf') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('contato') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
+              <tr>
+                <th class="align-top">ID</th>
+                <th class="align-top">Nome</th>
+                <th class="align-top">CPF</th>
+                <th class="align-top">E-mail</th>
+                <th class="align-top">Contato</th>
+                <th class="align-top d-nome d-lg-table-cell">Criado em:</th>
+                <th class="align-topd-nome d-lg-table-cell">Modificado em:</th>
+                <th class="align-top text-center">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
             <?php foreach ($clients as $client): ?>
-            <tr>
+              <tr>
                 <td><?= $this->Number->format($client->id) ?></td>
                 <td><?= h($client->name) ?></td>
                 <td><?= h($client->cpf) ?></td>
@@ -41,17 +40,9 @@
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $client->id], ['confirm' => __('Are you sure you want to delete # {0}?', $client->id)]) ?>
                 </td>
             </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+      <?= $this->element('pagination');?>
     </div>
-</div>
+

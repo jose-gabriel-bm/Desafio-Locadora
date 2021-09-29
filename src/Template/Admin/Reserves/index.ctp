@@ -1,35 +1,34 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Reserve[]|\Cake\Collection\CollectionInterface $reserves
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Reserve'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="reserves index large-9 medium-8 columns content">
-    <h3><?= __('Reserves') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+<div class="d-flex">
+    <div class="mr-auto p-2">
+              <h3 class="display-4 titulo">Lista de Reservas</h3>
+            </div>
+              <div class="p-2">
+                  <?= $this->Html->link(__('Nova Reserva'),['controller'=>'reserves','action' => 'add'],
+                  ['class' => 'btn btn-outline-success btn-sm']); ?>               
+              </div>
+
+            </a>
+
+          </div>
+    <div class="table-responsive">
+        <table class="table table align-middle table-hover table-striped table-bordered">
         <thead>
-            <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('id_movies') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('id_clients') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('data_locacao') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('data_devolucao') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('reserves_value') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('created') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('devolvido') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
-        <tbody>
+              <tr>
+                <th class="align-top">ID</th>
+                <th class="align-top">Filme</th>
+                <th class="align-top">id_clientes</th>
+                <th class="align-top">Data locação</th>
+                <th class="align-top">Data Devolução</th>
+                <th class="align-top">Valor da Reserva</th>
+                <th class="align-top d-nome d-lg-table-cell">Criado em:</th>
+                <th class="align-topd-nome d-lg-table-cell">Modificado em:</th>
+                <th class="align-top">Filme Devolvido?</th>
+                <th class="align-top text-center">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
             <?php foreach ($reserves as $reserve): ?>
-            <tr>
+              <tr>
                 <td><?= $this->Number->format($reserve->id) ?></td>
                 <td><?= $this->Number->format($reserve->id_movies) ?></td>
                 <td><?= $this->Number->format($reserve->id_clients) ?></td>
@@ -47,17 +46,9 @@
                     <?= $this->Form->postLink(__('Alterar Status'), ['action' => 'alterstatus', $reserve->id], ['confirm' => __('Deseja realmente alterar status da reserva?', $reserve->id)]) ?>
                 </td>
             </tr>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+      <?= $this->element('pagination');?>
     </div>
-</div>
+

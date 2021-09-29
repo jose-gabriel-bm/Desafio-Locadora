@@ -1,3 +1,34 @@
+
+         <div class="d-flex">
+            <div class="mr-auto p-2">
+              <h2 class="display-4 titulo">Cadastrar Novo Usuario</h2>
+            </div> 
+              <div class="p-2">
+                    <?= $this->Html->link(__('lista de Usuarios'),['controller' => 'users', 'action' => 'index'],
+                    ['class'=>'btn btn-outline-primary btn-sm']) ?>
+              </div>
+            </a>
+          </div><hr>  
+
+          <?= $this->Form->create($user) ?>  
+
+          <div class="form-row">
+
+            <div class="form-group col-md-6">
+              <label><span class="text-danger">*</span> Nome </label>
+              <?= $this->Form->control('name', ['class' => 'form-control',
+              'placeholder' => 'Nome completo','label' => false]) ?>
+            </div>
+
+            <div class="col-md-6">
+              <label><span class="text-danger">*</span>Usuario</label>
+              <input name=usuario type="clientes" class="form-control" id="usuario" placeholder="Digite seu usuario">
+            </div>
+          </div>
+
+          <?= $this->Form->end() ?>
+
+
 <?php
 /**
  * @var \App\View\AppView $this

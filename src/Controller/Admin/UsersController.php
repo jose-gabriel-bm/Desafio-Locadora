@@ -29,7 +29,7 @@ class UsersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 20,
+            'limit' => 05,
             'order' => [
                 'Users.id' =>'asc',
             ]
