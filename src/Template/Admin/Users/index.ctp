@@ -1,3 +1,21 @@
+<div class="d-flex">
+    <div class="mr-auto p-2">
+              <h3 class="display-4 titulo">Lista de Usuarios</h3>
+            </div>
+            <a href="#">
+              <div class="p-2">                
+                <button class="btn btn-outline-success btn-sm">Adicionar novo Usuario</button>
+              </div>
+
+            </a>
+
+          </div>
+ <div class="table-responsive">
+ <table class="table table-hover table-striped table-bordered">
+
+  </table>
+ </div>
+
 <?php
 
 ?>
