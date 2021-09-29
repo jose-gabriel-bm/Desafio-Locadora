@@ -34,7 +34,7 @@ class ReservesController extends AppController
             $reserve = $this->Reserves->patchEntity($reserve, $this->request->getData());
             
             if ($this->Reserves->save($reserve)) {
-                $this->Flash->success(__('The reserve has been saved.'));
+                $this->Flash->success(__('Reserva salva com sucesso.'));
                 
                 // debug ($this->request->data());
                 $filmeTable = TableRegistry::getTableLocator()->get('Filmes');
@@ -45,7 +45,7 @@ class ReservesController extends AppController
                                               
                 return $this->redirect(['action' => 'index']);
             }
-             $this->Flash->error(__('The reserve could not be saved. Please, try again.'));
+             $this->Flash->danger(__('A reserva não pôde ser salva. Por favor, tente novamente.'));
         }
 
            

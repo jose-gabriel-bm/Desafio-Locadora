@@ -1,18 +1,26 @@
+<div class="d-flex">
+            <div class="mr-auto p-2">
+              <h2 class="display-4 titulo">Filme</h2>
+            </div>
+            <div class="p-2">
+            <td class="text-center">
+            <?= $this->Html->link(__('Lista'), ['controller' => 'clients', 'action' => 'index'],['class' => 'btn btn-outline-primary btn-sm']) ?>
+            <?= $this->Html->link(__('Editar'), ['controller' => 'clients', 'action' => 'edit',$client->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
+            <?= $this->Form->postlink(__('Apagar'), ['controller' => 'clients', 'action' => 'delete',$client->id],['class' => 'btn btn-outline-danger btn-sm',
+            'confirm' => __('Realmente deseja apagar esses dados? # {0}?', $client->id)]) ?>
+            
+            
+            </td>
+          </div>
+           
+          </div><hr> 
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Client $client
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Client'), ['action' => 'edit', $client->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Client'), ['action' => 'delete', $client->id], ['confirm' => __('Are you sure you want to delete # {0}?', $client->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Clients'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Client'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
+
 <div class="clients view large-9 medium-8 columns content">
     <h3><?= h($client->name) ?></h3>
     <table class="vertical-table">

@@ -43,7 +43,7 @@
                 <td><?= h($filme->created) ?></td>
                 <td><?= h($filme->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $filme->id]) ?>
+                    <?= $this->Html->link(__('Visualizar'), ['controller' => 'filmes', 'action' => 'view', $filme->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $filme->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $filme->id], ['confirm' => __('Are you sure you want to delete # {0}?', $filme->id)]) ?>
                 </td>

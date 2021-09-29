@@ -1,21 +1,26 @@
+<div class="d-flex">
+            <div class="mr-auto p-2">
+              <h2 class="display-4 titulo">Reserva</h2>
+            </div>
+            <div class="p-2">
+            <td class="text-center">
+            <?= $this->Html->link(__('Lista'), ['controller' => 'reserves', 'action' => 'index'],['class' => 'btn btn-outline-primary btn-sm']) ?>
+            <?= $this->Html->link(__('Editar'), ['controller' => 'reserves', 'action' => 'edit',$reserve->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
+            <?= $this->Form->postlink(__('Apagar'), ['controller' => 'reserves', 'action' => 'delete',$reserve->id],['class' => 'btn btn-outline-danger btn-sm',
+            'confirm' => __('Realmente deseja apagar esses dados?', $reserve->id)]) ?>
+            
+            
+            </td>
+          </div>
+           
+          </div><hr> 
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Reserve $reserve
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Reserve'), ['action' => 'edit', $reserve->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Reserve'), ['action' => 'delete', $reserve->id], ['confirm' => __('Are you sure you want to delete # {0}?', $reserve->id)]) ?> </li>
-       
-        <li><?= $this->Form->postLink(__('Devolver Filme'), ['action' => 'devolver', $reserve->id], ['confirm' => __('Deseja realmente devolver o Filme? # {0}?', $reserve->id)]) ?> </li>
-        
-        <li><?= $this->Html->link(__('List Reserves'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Reserve'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
+
 <div class="reserves view large-9 medium-8 columns content">
     <h3><?= h($reserve->id) ?></h3>
     <table class="vertical-table">

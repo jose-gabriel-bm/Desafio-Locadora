@@ -1,18 +1,27 @@
+<div class="d-flex">
+            <div class="mr-auto p-2">
+              <h2 class="display-4 titulo">Filme</h2>
+            </div>
+            <div class="p-2">
+            <td class="text-center">
+            <?= $this->Html->link(__('Lista'), ['controller' => 'filmes', 'action' => 'index'],['class' => 'btn btn-outline-primary btn-sm']) ?>
+            <?= $this->Html->link(__('Editar'), ['controller' => 'filmes', 'action' => 'edit',$filme->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
+            <?= $this->Form->postlink(__('Apagar'), ['controller' => 'filmes', 'action' => 'delete',$filme->id],['class' => 'btn btn-outline-danger btn-sm',
+            'confirm' => __('Realmente deseja apagar esses dados? # {0}?', $filme->id)]) ?>
+            
+            
+            </td>
+          </div>
+           
+          </div><hr> 
+
 <?php
 /**
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Filme $filme
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Filme'), ['action' => 'edit', $filme->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Filme'), ['action' => 'delete', $filme->id], ['confirm' => __('Are you sure you want to delete # {0}?', $filme->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Filmes'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Filme'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
+
 <div class="filmes view large-9 medium-8 columns content">
     <h3><?= h($filme->title) ?></h3>
     <table class="vertical-table">

@@ -22,37 +22,37 @@
 
             <div class="col-md-6">
               <label><span class="text-danger">*</span>Usuario</label>
-              <input name=usuario type="clientes" class="form-control" id="usuario" placeholder="Digite seu usuario">
+              <?= $this->Form->control('username', ['class' => 'form-control',
+              'placeholder' => 'Digite um usuario','label' => false]) ?>
             </div>
           </div>
 
-          <?= $this->Form->end() ?>
+          <div class="form-row">
 
+            <div class="form-group col-md-6">
+              <label><span class="text-danger">*</span> E-mail </label>
+              <?= $this->Form->control('email', ['class' => 'form-control',
+              'placeholder' => 'Digite um E-mail ativo','label' => false]) ?>
+            </div>
 
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\User $user
- */
-?>
-<nav class="large-2 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="users form large-10 medium-8 columns content">
-    <?= $this->Form->create($user) ?>
-    <fieldset>
-        <legend><?= __('Add User') ?></legend>
-        <?php
-            echo $this->Form->control('name');
-            echo $this->Form->control('username');
-            echo $this->Form->control('email');
-            echo $this->Form->control('password');
-            echo $this->Form->control('id_roles',array('options' => $funcao, 'empty'=>'Selecione uma função'));
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Cadastrar')) ?>
-    <?= $this->Form->end() ?>
-</div>
+            <div class="col-md-6">
+              <label><span class="text-danger">*</span>Senha</label>
+              <?= $this->Form->control('password', ['class' => 'form-control',
+              'placeholder' => 'Senha deve ter no minino 4 digitos.','label' => false]) ?>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-6">
+                <label><span class="text-danger">*</span>ID Funções</label>
+                <?php echo $this->Form->control('id_roles',array('options' => $funcao,
+                'empty'=>'Selecione uma função','label' => false));?>
+            </div>
+          </div>
+          <hr>
+          <div class="col-12">
+              <button type="submit" class="btn btn-success">Cadastrar</button>
+          </div>
+        <?= $this->Form->end() ?>
+
+        

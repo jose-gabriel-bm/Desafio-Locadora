@@ -51,11 +51,11 @@ class ClientsController extends AppController
         if ($this->request->is('post')) {
             $client = $this->Clients->patchEntity($client, $this->request->getData());
             if ($this->Clients->save($client)) {
-                $this->Flash->success(__('The client has been saved.'));
+                $this->Flash->success(__('O cliente cadastrado com sucesso.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The client could not be saved. Please, try again.'));
+            $this->Flash->danger(__('O cliente não pôde ser cadastrado. Por favor, tente novamente.'));
         }
         $this->set(compact('client'));
     }

@@ -51,11 +51,11 @@ class FilmesController extends AppController
         if ($this->request->is('post')) {
             $filme = $this->Filmes->patchEntity($filme, $this->request->getData());
             if ($this->Filmes->save($filme)) {
-                $this->Flash->success(__('The filme has been saved.'));
+                $this->Flash->success(__('O filme foi salvo.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The filme could not be saved. Please, try again.'));
+            $this->Flash->danger(__('O filme não pôde ser salvo. Por favor, tente novamente'));
         }
         $this->set(compact('filme'));
     }

@@ -53,11 +53,11 @@ class RolesController extends AppController
         if ($this->request->is('post')) {
             $role = $this->Roles->patchEntity($role, $this->request->getData());
             if ($this->Roles->save($role)) {
-                $this->Flash->success(__('The role has been saved.'));
+                $this->Flash->success(__('Função salva com sucesso.'));
 
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The role could not be saved. Please, try again.'));
+            $this->Flash->danger(__('A função não pôde ser salva. Por favor, tente novamente.'));
         }
         $this->set(compact('role'));
     }

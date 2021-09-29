@@ -1,30 +1,73 @@
-<?php
-/**
- * @var \App\View\AppView $this
- * @var \App\Model\Entity\Filme $filme
- */
-?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Filmes'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="filmes form large-9 medium-8 columns content">
-    <?= $this->Form->create($filme) ?>
-    <fieldset>
-        <legend><?= __('Add Filme') ?></legend>
-        <?php
-            echo $this->Form->control('title');
-            echo $this->Form->control('ano');
-            echo $this->Form->control('genre');
-            echo $this->Form->control('description');
-            echo $this->Form->control('director');
-            echo $this->Form->control('language');
-            echo $this->Form->control('movie_value');
-            echo $this->Form->control('quantity')
-        ?>
-    </fieldset>
-    <?= $this->Form->button(__('Submit')) ?>
-    <?= $this->Form->end() ?>
-</div>
+
+         <div class="d-flex">
+            <div class="mr-auto p-2">
+              <h2 class="display-4 titulo">Cadastrar Novo Filme</h2>
+            </div> 
+              <div class="p-2">
+                    <?= $this->Html->link(__('lista de Filmes'),['controller' => 'filmes', 'action' => 'index'],
+                    ['class'=>'btn btn-outline-primary btn-sm']) ?>
+              </div>
+            </a>
+          </div><hr>  
+
+          <?= $this->Form->create($filme) ?>  
+
+          <div class="form-row">
+
+          <div class="form-group col-md-4">
+              <label><span class="text-danger">*</span> Titulo </label>
+              <?= $this->Form->control('title', ['class' => 'form-control',
+              'placeholder' => 'Nome do filme.','label' => false]) ?>
+            </div>
+            <div class="form-group col-md-4">
+              <label><span class="text-danger">*</span> Ano </label>
+              <?= $this->Form->control('ano', ['class' => 'form-control',
+              'placeholder' => 'Ex: 2007','label' => false]) ?>
+            </div>
+            <div class="form-group col-md-4">
+              <label><span class="text-danger">*</span> Genero </label>
+              <?= $this->Form->control('genre', ['class' => 'form-control',
+              'placeholder' => 'Ex: Ação/romance.00','label' => false]) ?>
+            </div>        
+          
+          </div>
+
+          <div class="form-row">
+
+          <div class="form-group col-md-4">
+              <label><span class="text-danger">*</span> Diretor </label>
+              <?= $this->Form->control('director', ['class' => 'form-control',
+              'placeholder' => '','label' => false]) ?>
+            </div>
+            <div class="form-group col-md-4">
+              <label><span class="text-danger">*</span> Valor do Filme </label>
+              <?= $this->Form->control('movie_value', ['class' => 'form-control',
+              'placeholder' => '','label' => false]) ?>
+            </div>
+            <div class="form-group col-md-4">
+              <label><span class="text-danger">*</span> Linguagem </label>
+              <?= $this->Form->control('language', ['class' => 'form-control',
+              'placeholder' => '','label' => false]) ?>
+            </div>        
+          
+          </div>
+          
+          <div class="form-row">
+          <div class="form-group col-md-6">
+              <label><span class="text-danger">*</span> Descrição </label>
+              <?= $this->Form->control('description', ['class' => 'form-control',
+              'placeholder' => '','label' => false]) ?>
+            </div>
+            <div class="form-group col-md-6">
+              <label><span class="text-danger">*</span> Quantidade </label>
+              <?= $this->Form->control('quantity', ['class' => 'form-control',
+              'placeholder' => '','label' => false]) ?>
+            </div>
+          </div>
+          <hr>
+          <div class="col-12">
+              <button type="submit" class="btn btn-success">Cadastrar</button>
+          </div>
+        <?= $this->Form->end() ?>
+
+        

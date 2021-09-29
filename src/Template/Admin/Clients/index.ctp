@@ -35,7 +35,7 @@
                 <td><?= h($client->created) ?></td>
                 <td><?= h($client->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $client->id]) ?>
+                    <?= $this->Html->link(__('Visualizar'), ['controller' => 'clients', 'action' => 'view', $client->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $client->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $client->id], ['confirm' => __('Are you sure you want to delete # {0}?', $client->id)]) ?>
                 </td>
