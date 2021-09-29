@@ -17,43 +17,27 @@
 $cakeDescription = 'Administrativo';
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <?= $this->Html->charset() ?>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1,shrink-to-fit=no">
     <title>
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
     <?= $this->Html->meta('icon') ?>
 
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('style.css') ?>
+    <?= $this->Html->css(['bootstrap.min' , 'signin' ]) ?>
 
     <?= $this->fetch('meta') ?>
     <?= $this->fetch('css') ?>
     <?= $this->fetch('script') ?>
 </head>
-<body>
-    <nav class="top-bar expanded" data-topbar role="navigation">
-        <ul class="large-2 medium-4 columns">
-            <li class="name">
-                <h1><a href=""><?= $this->fetch('title') ?></a></h1>
-            </li>
-        </ul>
-        <div class="top-bar-section">
-            <ul class="right">     
-                <?php if ($username): ?>
-                <li><?= $this->Html->link(__('logout'), ['controller' => 'Users','action' => 'logout']) ?></li>
-            <?php endif;?>
-            </ul>
-        </div>
-    </nav>
+<body class="text-center">
+    
     <?= $this->Flash->render() ?>
-    <div class="container clearfix">
-        <?= $this->fetch('content') ?>
-    </div>
-    <footer>
-    </footer>
+    <?= $this->fetch('content') ?>
+    
+    <?= $this->Html->script(['jquery-3.6.0.min' , 'bootstrap.bundle.min' ]) ?>
 </body>
 </html>

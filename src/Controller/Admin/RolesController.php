@@ -2,6 +2,7 @@
 namespace App\Controller\Admin;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Roles Controller
@@ -12,6 +13,11 @@ use App\Controller\AppController;
  */
 class RolesController extends AppController
 {
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+            $this->Auth->allow('add');
+    }
   
     public function index()
     {

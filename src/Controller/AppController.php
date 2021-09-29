@@ -85,14 +85,31 @@ class AppController extends Controller
 
     public function beforeRender(Event $event)
     {
+        // $prefix = null;
+        // if($this->request->getParam(['prefix']) !== null )){
+        //     $prefix = $this->request->getParam(['prefix']);
+        // }
+        // if($prefix == 'admin'){
+        //     if(($this->request->getParam(['action'] !== null)) and
+        //      ($this->request->getParam(['action'] == 'login')){
+        //        $this->viewBuilder()->setLayout('login'); 
+        //     }
+        
+        // }
+
+
+
         if(!array_key_exists('_serialize', $this->viewVars) && in_array($this->response->type(),['aplication/json', 'aplication/xml'])
         ){
             $this->set('__serialize', true);
+            $this->viewBuilder()->setLayout('login');
         }
     }
 
     public function beforeFilter(Event $event)
     {
         $this->set('username', $this-> Auth->user('username'));
+        $this->viewBuilder()->setLayout('login');
     }
+    
 }
