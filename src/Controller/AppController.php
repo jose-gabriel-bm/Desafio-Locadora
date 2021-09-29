@@ -17,26 +17,9 @@ namespace App\Controller;
 use Cake\Controller\Controller;
 use Cake\Event\Event;
 
-/**
- * Application Controller
- *
- * Add your application-wide methods in the class below, your controllers
- * will inherit them.
- *
- * @link https://book.cakephp.org/3/en/controllers.html#the-app-controller
- */
 class AppController extends Controller
 {
 
-    /**
-     * Initialization hook method.
-     *
-     * Use this method to add common initialization code like loading components.
-     *
-     * e.g. `$this->loadComponent('Security');`
-     *
-     * @return void
-     */
     public function initialize()
     {
         parent::initialize();
@@ -45,71 +28,40 @@ class AppController extends Controller
             'enableBeforeRedirect' => false,
         ]);
         $this->loadComponent('Flash');
-        $this->loadComponent('Auth',
-        [
-            'authenticate' => 
-            [
-                'Form' => 
-                [
-                    'fields' => 
-                    [
-                        'username' => 'username',
-                        'password' => 'password'
-
-                    ]
-                ]
+        $this->loadComponent('Auth', [
+            'loginRedirect' =>[
+                'controller'=>'Users',
+                'action'=>'index'
             ],
-    
-            'loginRedirect' => 
-            [
-                'controller' => 'Users' ,
-                'action' => 'index'
-            ],
-            
-            'logoutRedirect' => 
-            [
-                'controller' => 'Users' ,
-                'action' => 'login'
-            ],
-    
+            'logoutRedirect'=>[
+                'controller'=>'users',
+                'action'=>'login'
+            ]
         ]);
-
-        /*
-         * Enable the following component for recommended CakePHP security settings.
-         * see https://book.cakephp.org/3/en/controllers/components/security.html
-         */
-        //$this->loadComponent('Security');
-
-
     }
 
     public function beforeRender(Event $event)
     {
-        // $prefix = null;
-        // if($this->request->getParam(['prefix']) !== null )){
-        //     $prefix = $this->request->getParam(['prefix']);
-        // }
-        // if($prefix == 'admin'){
-        //     if(($this->request->getParam(['action'] !== null)) and
-        //      ($this->request->getParam(['action'] == 'login')){
-        //        $this->viewBuilder()->setLayout('login'); 
-        //     }
-        
-        // }
+        $prefix = null;
+        if($this->request->getParam(['prefix']) !== null ){
+            $prefix = $this->request->getParam(['prefix']);
+        }
 
-
-
-        if(!array_key_exists('_serialize', $this->viewVars) && in_array($this->response->type(),['aplication/json', 'aplication/xml'])
-        ){
-            $this->set('__serialize', true);
-            $this->viewBuilder()->setLayout('login');
+         if($prefix == 'admin')
+        {
+            if(($this->request->getParam(['action']) !== null ) AND ($this->request->getParam(['action']) == 'login')){
+                $this->viewBuilder()->setLayout('login');
+            }else{
+                $this->viewBuilder()->setLayout('admin');
+            }
         }
     }
-
-    public function beforeFilter(Event $event)
-    {
-        $this->set('username', $this-> Auth->user('username'));
-        $this->viewBuilder()->setLayout('login');
-    }
-    
 }
+
+  //     public function beforeFilter(Event $event)
+//     {
+//         $this->set('username', $this-> Auth->user('username'));
+//         $this->viewBuilder()->setLayout('login');
+//     }
+    
+//}

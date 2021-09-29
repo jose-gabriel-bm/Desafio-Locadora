@@ -127,13 +127,15 @@ class UsersController extends AppController
             if($user){
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
+            }else{
+            $this->Flash->danger(__('Erro:Login ou usuario incorretos, por favor tentar novamente!'));
             }
-            $this->Flash->error(__('Invalid username or password,try again'));
         }
         
     }
 
     public function logout(){
+        $this->Flash->success(__('Deslogado com sucesso!'));
         return $this->redirect($this->Auth->logout());
     }
     
