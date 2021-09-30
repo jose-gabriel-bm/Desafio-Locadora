@@ -5,7 +5,7 @@
 
 <h1 class="h3 mb-3 font-weight-normal">Bem vindo AxMovie</h1>
 
-        <?= $this->Flash->danger(); ?>
+        <!-- <?= $this->Flash->danger(); ?> -->
 
     <div class="form-group">
             <label >Usuario</label>
