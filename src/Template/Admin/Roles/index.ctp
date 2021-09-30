@@ -30,10 +30,11 @@
                 <td><?= h($role->created) ?></td>
                 <td><?= h($role->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Visualizar'), ['controller' => 'roles', 'action' => 'view', $role->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $role->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $role->id], ['confirm' => __('Are you sure you want to delete # {0}?', $role->id)]) ?>
-                </td>
+                    <?= $this->Html->link(__('Visualizar'), ['controller' => 'roles', 'action' => 'view',$role->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
+                    <?= $this->Html->link(__('Editar'), ['controller' => 'roles', 'action' => 'edit',$role->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
+                    <?= $this->Form->postlink(__('Apagar'), ['controller' => 'roles', 'action' => 'delete',$role->id],['class' => 'btn btn-outline-danger btn-sm',
+                    'confirm' => __('Realmente deseja apagar esses dados?', $role->id)]) ?>              
+                 </td>
                 </tr>
                 <?php endforeach; ?>
             </tbody>

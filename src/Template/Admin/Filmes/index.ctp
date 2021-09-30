@@ -19,7 +19,6 @@
                 <th class="align-top">Ano</th>
                 <th class="align-top">Genero</th>
                 <th class="align-top">Descrição</th>
-                <th class="align-top">director</th>
                 <th class="align-top">Linguagem</th>
                 <th class="align-top">Valor Filme</th>
                 <th class="align-top">Quantidade</th>
@@ -36,7 +35,6 @@
                 <td><?= h($filme->ano) ?></td>
                 <td><?= h($filme->genre) ?></td>
                 <td><?= h($filme->description) ?></td>
-                <td><?= h($filme->director) ?></td>
                 <td><?= h($filme->language) ?></td>
                 <td><?= $this->Number->format($filme->movie_value) ?></td>
                 <td><?= $this->Number->format($filme->quantity) ?></td>
@@ -44,9 +42,10 @@
                 <td><?= h($filme->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Visualizar'), ['controller' => 'filmes', 'action' => 'view', $filme->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $filme->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $filme->id], ['confirm' => __('Are you sure you want to delete # {0}?', $filme->id)]) ?>
-                </td>
+                    <?= $this->Html->link(__('Editar'), ['controller' => 'filmes', 'action' => 'edit',$filme->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
+                    <?= $this->Form->postlink(__('Apagar'), ['controller' => 'filmes', 'action' => 'delete',$filme->id],['class' => 'btn btn-outline-danger btn-sm',
+                    'confirm' => __('Realmente deseja apagar esses dados? # {0}?', $filme->id)]) ?>
+            </td>
             </tr>
                 <?php endforeach; ?>
             </tbody>

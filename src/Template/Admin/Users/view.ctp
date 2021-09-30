@@ -9,8 +9,6 @@
             <?= $this->Html->link(__('Editar'), ['controller' => 'users', 'action' => 'edit',$user->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
             <?= $this->Form->postlink(__('Apagar'), ['controller' => 'users', 'action' => 'delete',$user->id],['class' => 'btn btn-outline-danger btn-sm',
             'confirm' => __('Realmente deseja apagar esses dados? # {0}?', $user->id)]) ?>
-            
-            
             </td>
           </div>
            

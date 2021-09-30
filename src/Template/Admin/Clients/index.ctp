@@ -36,9 +36,10 @@
                 <td><?= h($client->modified) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('Visualizar'), ['controller' => 'clients', 'action' => 'view', $client->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $client->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $client->id], ['confirm' => __('Are you sure you want to delete # {0}?', $client->id)]) ?>
-                </td>
+                    <?= $this->Html->link(__('Editar'), ['controller' => 'clients', 'action' => 'edit',$client->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
+            <?= $this->Form->postlink(__('Apagar'), ['controller' => 'clients', 'action' => 'delete',$client->id],['class' => 'btn btn-outline-danger btn-sm',
+            'confirm' => __('Realmente deseja apagar esses dados? # {0}?', $client->id)]) ?>
+            </td>
             </tr>
                 <?php endforeach; ?>
             </tbody>

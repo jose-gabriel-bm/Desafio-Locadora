@@ -39,11 +39,12 @@
                 <td><?= h($reserve->modified) ?></td>
                 <td><?= h($reserve->devolvido) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('Visualizar'), ['controller' => 'reserves', 'action' => 'view', $reserve->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $reserve->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $reserve->id], ['confirm' => __('Are you sure you want to delete # {0}?', $reserve->id)]) ?>
-                    <?= $this->Form->postLink(__('Devolver'), ['action' => 'devolver', $reserve->id_movies], ['confirm' => __('Deseja realmente devolver o Filme?', $reserve->id)]) ?>
-                    <?= $this->Form->postLink(__('Alterar Status'), ['action' => 'alterstatus', $reserve->id], ['confirm' => __('Deseja realmente alterar status da reserva?', $reserve->id)]) ?>
+                <?= $this->Html->link(__('Visualizar'), ['controller' => 'reserves', 'action' => 'view',$reserve->id],['class' => 'btn btn-outline-primary btn-sm']) ?>
+                <?= $this->Html->link(__('Editar'), ['controller' => 'reserves', 'action' => 'edit',$reserve->id],['class' => 'btn btn-outline-warning btn-sm']) ?>
+                <?= $this->Form->postlink(__('Delete'), ['controller' => 'reserves', 'action' => 'delete',$reserve->id],['class' => 'btn btn-outline-danger btn-sm',
+                'confirm' => __('Realmente deseja apagar esses dados?', $reserve->id)]) ?>
+                <?= $this->Form->postLink(__('Devolver'), ['action' => 'devolver', $reserve->id_movies], ['confirm' => __('Deseja realmente devolver o Filme?', $reserve->id)]) ?>
+                <?= $this->Form->postLink(__('Alterar Status'), ['action' => 'alterstatus', $reserve->id], ['confirm' => __('Deseja realmente alterar status da reserva?', $reserve->id)]) ?>
                 </td>
             </tr>
                 <?php endforeach; ?>
