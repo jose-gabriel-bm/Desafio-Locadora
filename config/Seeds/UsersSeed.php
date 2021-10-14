@@ -30,6 +30,7 @@ class UsersSeed extends AbstractSeed
                 'created' => '2021-09-16 17:59:10',
                 'modified' => '2021-09-16 17:59:10',
             ],
+            
         ];
 
         $table = $this->table('users');
